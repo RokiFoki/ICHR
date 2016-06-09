@@ -10,7 +10,7 @@
         <Key android:codes="38" android:keyLabel="&amp;" android:keyWidth="15%p"  />
         <Key android:codes="95" android:keyLabel="_" android:keyWidth="15%p"  />
         <Key android:codes="35" android:keyLabel="#" android:keyWidth="15%p"  />
-        <Key android:codes="-5" android:keyIcon="@drawable/ic_keyboard_backspace_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="right" android:isRepeatable="true"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/ic_keyboard_backspace_24dp" android:keyWidth="25%p" android:keyEdgeFlags="right" android:isRepeatable="true"/>
     </Row>
     <Row >
         <Key android:codes="37" android:keyLabel="%" android:keyEdgeFlags="left"/>
@@ -52,11 +52,11 @@
     </Row>
 
     <Row>
-        <Key android:codes="-1" android:keyIcon="@drawable/ic_keyboard_capslock_black_24dp" android:keyWidth="24%p" android:keyEdgeFlags="left"/>
-        <Key android:codes="-700" android:keyIcon="@drawable/ic_keyboard_black_24dp" android:keyWidth="24%p"/>
+        <Key android:codes="-1" android:keyIcon="@drawable/ic_keyboard_capslock_24dp" android:keyWidth="24%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="-700" android:keyIcon="@drawable/ic_keyboard_24dp" android:keyWidth="24%p"/>
         <Key android:codes="63" android:keyLabel="\?" android:keyWidth="14%p" />
         <Key android:codes="33" android:keyLabel="!" android:keyWidth="14%p" />
-        <Key android:codes="-4" android:keyIcon="@drawable/ic_keyboard_return_black_24dp" android:keyWidth="24%p" android:keyEdgeFlags="right"/>
+        <Key android:codes="-4" android:keyIcon="@drawable/ic_keyboard_return_24dp" android:keyWidth="24%p" android:keyEdgeFlags="right"/>
     </Row>
 
 </Keyboard>
