@@ -95,6 +95,7 @@ public class SimpleIME extends InputMethodService
                 else
                     kv.setKeyboard(fitaly);
                 keyboard = !keyboard;
+                kv.invalidateAllKeys();
                 break;
             default:
                 char code = (char)primaryCode;
