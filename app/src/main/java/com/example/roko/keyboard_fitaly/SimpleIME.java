@@ -8,15 +8,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
 
-/**
- * Created by Roko on 31.5.2016..
- */
 public class SimpleIME extends InputMethodService
         implements KeyboardView.OnKeyboardActionListener {
 
     private KeyboardView kv;
-    private Keyboard keyboard;
-    private Keyboard keyboard2;
+    private Keyboard fitaly;
+    private Keyboard symbols;
+    private boolean keyboard = true;
 
     private boolean caps = false;
 
@@ -40,9 +38,9 @@ public class SimpleIME extends InputMethodService
     @Override
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        keyboard = new Keyboard(this, R.xml.qwerty);
-        keyboard2 = new Keyboard(this, R.xml.symbols);
-        kv.setKeyboard(keyboard);
+        fitaly = new Keyboard(this, R.xml.qwerty);
+        symbols = new Keyboard(this, R.xml.symbols);
+        kv.setKeyboard(fitaly);
         kv.setOnKeyboardActionListener(this);
         return kv;
     }
@@ -85,11 +83,18 @@ public class SimpleIME extends InputMethodService
                 break;
             case Keyboard.KEYCODE_SHIFT:
                 caps = !caps;
-                keyboard.setShifted(caps);
+                fitaly.setShifted(caps);
                 kv.invalidateAllKeys();
                 break;
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                break;
+            case -700:
+                if(keyboard)
+                    kv.setKeyboard(symbols);
+                else
+                    kv.setKeyboard(fitaly);
+                keyboard = !keyboard;
                 break;
             default:
                 char code = (char)primaryCode;
