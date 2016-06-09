@@ -91,6 +91,8 @@ public class SimpleIME extends InputMethodService
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
+            case -69:
+                break;
             default:
                 char code = (char)primaryCode;
                 if(Character.isLetter(code) && caps){
