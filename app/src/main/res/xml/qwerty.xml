@@ -53,10 +53,10 @@
 
     <Row>
         <Key android:codes="-1" android:keyIcon="@drawable/ic_keyboard_capslock_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="left"/>
-        <Key android:codes="-700" android:keyIcon="@drawable/ic_keyboard_black_24dp" android:keyWidth="25%p"/>
+        <Key android:codes="-69" android:keyIcon="@drawable/ic_keyboard_black_24dp" android:keyWidth="25%p"/>
         <Key android:codes="46" android:keyLabel="."/>
         <Key android:codes="44" android:keyLabel=","/>
-        <Key android:codes="-2" android:keyIcon="@drawable/ic_keyboard_return_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="right"/>
+        <Key android:codes="-4" android:keyIcon="@drawable/ic_keyboard_return_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="right"/>
     </Row>
 
 </Keyboard>
