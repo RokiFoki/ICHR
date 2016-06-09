@@ -2,7 +2,7 @@
     android:keyWidth="17%p"
     android:horizontalGap="0px"
     android:verticalGap="0px"
-    android:keyHeight="7%p"
+    android:keyHeight="6.5%p"
     >
     <Row>
         <Key android:codes="382" android:keyLabel="ž" android:keyEdgeFlags="left" />
@@ -10,7 +10,7 @@
         <Key android:codes="269" android:keyLabel="č"  />
         <Key android:codes="263" android:keyLabel="ć"  />
         <Key android:codes="273" android:keyLabel="đ"  />
-        <Key android:codes="-5" android:keyLabel="DEL" android:keyEdgeFlags="right" android:isRepeatable="true"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/ic_keyboard_backspace_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="right" android:isRepeatable="true"/>
     </Row>
     <Row >
         <Key android:codes="122" android:keyLabel="z" android:keyEdgeFlags="left"/>
@@ -29,10 +29,10 @@
         <Key android:codes="121" android:keyLabel="y" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <Key android:codes="32" android:keyLabel=" " android:keyWidth="34%p" android:isRepeatable="true" />
+        <Key android:codes="32" android:keyLabel=" " android:keyWidth="34.2%p" android:isRepeatable="true" />
         <Key android:codes="110" android:keyLabel="n"/>
         <Key android:codes="101" android:keyLabel="e"/>
-        <Key android:codes="32" android:keyLabel=" " android:keyEdgeFlags="right" android:keyWidth="34%p" android:isRepeatable="true"/>
+        <Key android:codes="32" android:keyLabel=" " android:keyEdgeFlags="right" android:keyWidth="34.2%p" android:isRepeatable="true"/>
     </Row>
     <Row>
         <Key android:codes="103" android:keyLabel="g" android:keyEdgeFlags="left"/>
@@ -52,12 +52,11 @@
     </Row>
 
     <Row>
-        <Key android:codes="-1" android:keyLabel="^" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1" android:keyIcon="@drawable/ic_keyboard_capslock_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="-700" android:keyIcon="@drawable/ic_keyboard_black_24dp" android:keyWidth="25%p"/>
         <Key android:codes="46" android:keyLabel="."/>
         <Key android:codes="44" android:keyLabel=","/>
-        <Key android:codes="63" android:keyLabel="\?"/>
-        <Key android:codes="33" android:keyLabel="!"/>
-        <Key android:codes="-2" android:keyLabel="123" android:keyEdgeFlags="right"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/ic_keyboard_return_black_24dp" android:keyWidth="25%p" android:keyEdgeFlags="right"/>
     </Row>
 
 </Keyboard>
