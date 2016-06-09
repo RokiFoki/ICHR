@@ -43,21 +43,19 @@ public class SimpleIME extends InputMethodService
         symbols = new Keyboard(this, R.xml.symbols);
         kv.setKeyboard(fitaly);
         kv.setOnKeyboardActionListener(this);
+
+        kv.setPreviewEnabled(false);
+
         return kv;
     }
 
     @Override
     public void onPress(int primaryCode) {
-        Toast.makeText(this, "" + primaryCode, Toast.LENGTH_SHORT).show();
-        if (primaryCode <= 0){
-            kv.setPreviewEnabled(false);
-        }
 
     }
 
     @Override
     public void onRelease(int primaryCode) {
-        kv.setPreviewEnabled(true);
     }
 
     @Override
@@ -82,9 +80,6 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
-        if (primaryCode <= 0){
-            kv.setPreviewEnabled(false);
-        }
 
         InputConnection ic = getCurrentInputConnection();
         playClick(primaryCode);
