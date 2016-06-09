@@ -1,5 +1,6 @@
 package com.example.roko.keyboard_fitaly;
 
+import android.content.res.Configuration;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -16,6 +17,7 @@ public class SimpleIME extends InputMethodService
     private Keyboard fitaly;
     private Keyboard symbols;
     private boolean keyboard = true;
+    private int numberOfErrors;
 
     private boolean caps = false;
 
@@ -38,6 +40,7 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public View onCreateInputView() {
+        numberOfErrors = 0;
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
         fitaly = new Keyboard(this, R.xml.qwerty);
         symbols = new Keyboard(this, R.xml.symbols);
@@ -51,7 +54,13 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public void onPress(int primaryCode) {
+    }
 
+    @Override
+    public void onFinishInput()
+    {
+        super.onFinishInput();
+        numberOfErrors = 0;
     }
 
     @Override
@@ -84,7 +93,8 @@ public class SimpleIME extends InputMethodService
         InputConnection ic = getCurrentInputConnection();
         playClick(primaryCode);
         switch(primaryCode){
-            case Keyboard.KEYCODE_DELETE :
+            case Keyboard.KEYCODE_DELETE:
+                numberOfErrors++;
                 ic.deleteSurroundingText(1, 0);
                 break;
             case Keyboard.KEYCODE_SHIFT:
@@ -94,6 +104,7 @@ public class SimpleIME extends InputMethodService
                 break;
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                ic.commitText(Integer.toString(numberOfErrors), 1);
                 break;
             case -700:
                 if(keyboard)
@@ -108,7 +119,7 @@ public class SimpleIME extends InputMethodService
                 if(Character.isLetter(code) && caps){
                     code = Character.toUpperCase(code);
                 }
-                ic.commitText(String.valueOf(code),1);
+                ic.commitText(String.valueOf(code), 1);
         }
     }
 }
