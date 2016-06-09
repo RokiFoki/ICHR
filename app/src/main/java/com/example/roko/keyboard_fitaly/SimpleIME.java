@@ -7,6 +7,7 @@ import android.media.AudioManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
+import android.widget.Toast;
 
 public class SimpleIME extends InputMethodService
         implements KeyboardView.OnKeyboardActionListener {
@@ -47,10 +48,16 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public void onPress(int primaryCode) {
+        Toast.makeText(this, "" + primaryCode, Toast.LENGTH_SHORT).show();
+        if (primaryCode <= 0){
+            kv.setPreviewEnabled(false);
+        }
+
     }
 
     @Override
     public void onRelease(int primaryCode) {
+        kv.setPreviewEnabled(true);
     }
 
     @Override
@@ -75,6 +82,10 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
+        if (primaryCode <= 0){
+            kv.setPreviewEnabled(false);
+        }
+
         InputConnection ic = getCurrentInputConnection();
         playClick(primaryCode);
         switch(primaryCode){
