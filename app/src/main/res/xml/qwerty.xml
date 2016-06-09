@@ -2,15 +2,15 @@
     android:keyWidth="17%p"
     android:horizontalGap="0px"
     android:verticalGap="0px"
-    android:keyHeight="40dp"
+    android:keyHeight="7%p"
     >
     <Row>
         <Key android:codes="382" android:keyLabel="ž" android:keyEdgeFlags="left" />
         <Key android:codes="353" android:keyLabel="š"  />
-        <Key android:codes="268" android:keyLabel="č"  />
+        <Key android:codes="269" android:keyLabel="č"  />
         <Key android:codes="263" android:keyLabel="ć"  />
         <Key android:codes="268" android:keyLabel="đ"  />
-        <Key android:codes="268" android:keyLabel="DEL" android:keyEdgeFlags="right"/>
+        <Key android:codes="-5" android:keyLabel="DEL" android:keyEdgeFlags="right" android:isRepeatable="true"/>
     </Row>
     <Row >
         <Key android:codes="122" android:keyLabel="z" android:keyEdgeFlags="left"/>
