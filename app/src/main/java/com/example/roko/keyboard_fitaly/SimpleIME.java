@@ -16,6 +16,7 @@ public class SimpleIME extends InputMethodService
 
     private KeyboardView kv;
     private Keyboard keyboard;
+    private Keyboard keyboard2;
 
     private boolean caps = false;
 
@@ -40,6 +41,7 @@ public class SimpleIME extends InputMethodService
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
         keyboard = new Keyboard(this, R.xml.qwerty);
+        keyboard2 = new Keyboard(this, R.xml.symbols);
         kv.setKeyboard(keyboard);
         kv.setOnKeyboardActionListener(this);
         return kv;

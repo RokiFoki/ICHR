@@ -4,16 +4,16 @@
     android:verticalGap="0px"
     android:keyHeight="40dp"
     >
-    <Row>
-        <Key android:codes="382" android:keyLabel="ž" android:keyEdgeFlags="left" />
-        <Key android:codes="353" android:keyLabel="š"  />
-        <Key android:codes="268" android:keyLabel="č"  />
-        <Key android:codes="263" android:keyLabel="ć"  />
-        <Key android:codes="268" android:keyLabel="đ"  />
-        <Key android:codes="268" android:keyLabel="DEL" android:keyEdgeFlags="right"/>
-    </Row>
+    <!--<Row>
+        <Key android:codes="49" android:keyLabel="đ" android:keyEdgeFlags="left"/>
+        <Key android:codes="50" android:keyLabel="š"/>
+        <Key android:codes="51" android:keyLabel="č"/>
+        <Key android:codes="52" android:keyLabel="ć"/>
+        <Key android:codes="53" android:keyLabel="ž"/>
+        <Key android:codes="54" android:keyLabel="<-" android:keyEdgeFlags="right" />
+    </Row>-->
     <Row >
-        <Key android:codes="122" android:keyLabel="z" android:keyEdgeFlags="left"/>
+        <Key android:codes="122" android:keyLabel="z" android:keyEdgeFlags="left" />
         <Key android:codes="118" android:keyLabel="v"/>
         <Key android:codes="99" android:keyLabel="c"/>
         <Key android:codes="104" android:keyLabel="h"/>
@@ -29,7 +29,7 @@
         <Key android:codes="121" android:keyLabel="y" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <Key android:codes="32" android:keyLabel=" " android:keyWidth="34%p" android:isRepeatable="true" />
+        <Key android:codes="32" android:keyLabel=" " android:keyEdgeFlags="left" android:keyWidth="34%p" android:isRepeatable="true" />
         <Key android:codes="110" android:keyLabel="n"/>
         <Key android:codes="101" android:keyLabel="e"/>
         <Key android:codes="32" android:keyLabel=" " android:keyEdgeFlags="right" android:keyWidth="34%p" android:isRepeatable="true"/>
