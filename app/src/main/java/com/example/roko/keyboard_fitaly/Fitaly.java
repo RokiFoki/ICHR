@@ -1,6 +1,5 @@
 package com.example.roko.keyboard_fitaly;
 
-import android.content.res.Configuration;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -8,16 +7,15 @@ import android.media.AudioManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
-import android.widget.Toast;
 
-public class SimpleIME extends InputMethodService
+public class Fitaly extends InputMethodService
         implements KeyboardView.OnKeyboardActionListener {
 
     private KeyboardView kv;
     private Keyboard fitaly;
     private Keyboard symbols;
     private boolean keyboard = true;
-    private int numberOfErrors;
+    // private int numberOfErrors;
 
     private boolean caps = false;
 
@@ -40,9 +38,9 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public View onCreateInputView() {
-        numberOfErrors = 0;
+        // numberOfErrors = 0;
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        fitaly = new Keyboard(this, R.xml.qwerty);
+        fitaly = new Keyboard(this, R.xml.fitaly);
         symbols = new Keyboard(this, R.xml.symbols);
         kv.setKeyboard(fitaly);
         kv.setOnKeyboardActionListener(this);
@@ -60,7 +58,7 @@ public class SimpleIME extends InputMethodService
     public void onFinishInput()
     {
         super.onFinishInput();
-        numberOfErrors = 0;
+        // numberOfErrors = 0;
     }
 
     @Override
@@ -94,7 +92,7 @@ public class SimpleIME extends InputMethodService
         playClick(primaryCode);
         switch(primaryCode){
             case Keyboard.KEYCODE_DELETE:
-                numberOfErrors++;
+                // numberOfErrors++;
                 ic.deleteSurroundingText(1, 0);
                 break;
             case Keyboard.KEYCODE_SHIFT:
@@ -104,13 +102,14 @@ public class SimpleIME extends InputMethodService
                 break;
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
-                ic.commitText(Integer.toString(numberOfErrors), 1);
+                // ic.commitText(Integer.toString(numberOfErrors), 1);
                 break;
             case -700:
                 if(keyboard)
                     kv.setKeyboard(symbols);
                 else
                     kv.setKeyboard(fitaly);
+
                 keyboard = !keyboard;
                 kv.invalidateAllKeys();
                 break;
